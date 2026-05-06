@@ -1,0 +1,343 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\controllers\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:controllers\\salescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\mutation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\mutation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\inputs\\createproductinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\inputs\\createproductinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\inputs\\createuserinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\inputs\\createuserinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\inputs\\purchaseinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\inputs\\purchaseinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\inputs\\purchaseiteminput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\inputs\\purchaseiteminput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\inputs\\saleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\inputs\\saleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\inputs\\updateproductinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\inputs\\updateproductinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\inputs\\updateuserinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\inputs\\updateuserinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\graphql\\filename||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:graphql\\filename||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\inventory_management_system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:inventory_management_system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|c:\\users\\hp\\desktop\\inventory_management_system\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FDB39B9-6061-4E94-A171-12F76D22C501}|inventory_management_system.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SalesController.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Controllers\\SalesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SalesController.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Controllers\\SalesController.cs*",
+              "RelativeToolTip": "Controllers\\SalesController.cs*",
+              "ViewState": "AgIAACUAAAAAAAAAAAApwDAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T11:01:30.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Models\\Enums.cs",
+              "RelativeDocumentMoniker": "Models\\Enums.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Models\\Enums.cs",
+              "RelativeToolTip": "Models\\Enums.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T11:00:12.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T10:58:39.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PurchaseItemInput.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\PurchaseItemInput.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Inputs\\PurchaseItemInput.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\PurchaseItemInput.cs",
+              "RelativeToolTip": "GraphQL\\Inputs\\PurchaseItemInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T10:48:53.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PurchaseInput.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\PurchaseInput.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Inputs\\PurchaseInput.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\PurchaseInput.cs",
+              "RelativeToolTip": "GraphQL\\Inputs\\PurchaseInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T10:45:58.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SaleInput.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\SaleInput.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Inputs\\SaleInput.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\SaleInput.cs",
+              "RelativeToolTip": "GraphQL\\Inputs\\SaleInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T10:37:37.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpdateProductInput.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\UpdateProductInput.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Inputs\\UpdateProductInput.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\UpdateProductInput.cs",
+              "RelativeToolTip": "GraphQL\\Inputs\\UpdateProductInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T10:33:31.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateProductInput.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\CreateProductInput.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Inputs\\CreateProductInput.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\CreateProductInput.cs",
+              "RelativeToolTip": "GraphQL\\Inputs\\CreateProductInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T10:30:21.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UpdateUserInput.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\UpdateUserInput.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Inputs\\UpdateUserInput.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\UpdateUserInput.cs",
+              "RelativeToolTip": "GraphQL\\Inputs\\UpdateUserInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T10:26:30.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateUserInput.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\CreateUserInput.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Inputs\\CreateUserInput.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Inputs\\CreateUserInput.cs",
+              "RelativeToolTip": "GraphQL\\Inputs\\CreateUserInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T10:24:51.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FileName",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\FileName",
+              "RelativeDocumentMoniker": "GraphQL\\FileName",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\FileName",
+              "RelativeToolTip": "GraphQL\\FileName",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-09T08:33:54.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "inventory_management_system",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\inventory_management_system.csproj",
+              "RelativeDocumentMoniker": "inventory_management_system.csproj",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\inventory_management_system.csproj",
+              "RelativeToolTip": "inventory_management_system.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-09T08:27:43.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Mutation.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Mutation.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Mutation.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Mutation.cs",
+              "RelativeToolTip": "GraphQL\\Mutation.cs",
+              "ViewState": "AgIAANMAAAAAAAAAAAAiwOUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T05:42:53.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Query.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Query.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Query.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\GraphQL\\Query.cs",
+              "RelativeToolTip": "GraphQL\\Query.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T05:40:38.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-07T17:17:33.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAGYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T13:31:44.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAuwDAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T13:21:15.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T13:14:47.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T13:14:27.042Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
