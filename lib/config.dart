@@ -13,11 +13,25 @@ class Config {
   static const String graphqlUrl = '/graphql';
 
   static String getApiUrl() {
+    // IMPORTANT: for Flutter web running in the browser, localhost refers to the user's machine.
+    // In most dev setups the backend runs on the developer machine LAN IP instead.
+    // Prefer the LAN IP so the request reaches the backend.
     if (kIsWeb) {
-      return localhostUrl;
+      return baseUrl;
     }
-    // TODO: Improve: detect emulator vs physical (kIsWeb false branch)
-    // For now defaults to physical IP - update baseUrl IP as needed
+
+    // Heuristic:
+    // - Android Emulator uses 10.0.2.2
+    // - Physical device should use the PC/LAN IP
+    //
+    // You can override by setting --dart-define=API_BASE_URL=http://x.x.x.x:7188
+    const fromDefine = String.fromEnvironment('API_BASE_URL');
+    if (fromDefine.isNotEmpty) {
+      return fromDefine;
+    }
+
+    // Flutter doesn't provide direct emulator detection here without platform calls.
+    // Keep the existing default for physical devices.
     return baseUrl;
   }
 

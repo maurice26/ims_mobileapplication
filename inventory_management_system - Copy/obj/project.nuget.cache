@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3qQKB4SqVl4=",
+  "dgSpecHash": "lE1OtWSDQLg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hp\\Desktop\\inventory_management_system\\inventory_management_system.csproj",
+  "projectFilePath": "C:\\Users\\Hp\\Desktop\\IMS-Mobileapp\\ims_mobileapp\\inventory_management_system - Copy\\inventory_management_system.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hp\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

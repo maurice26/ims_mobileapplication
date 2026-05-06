@@ -11,7 +11,8 @@ class ApiService {
       BaseOptions(
         baseUrl: Config.getApiUrl(), // ✅ FIXED: Use dynamic URL
         connectTimeout: const Duration(seconds: 5),
-        receiveTimeout: const Duration(seconds: 3),
+        receiveTimeout: const Duration(seconds: 5),
+        sendTimeout: const Duration(seconds: 5),
       ),
     );
 
@@ -25,7 +26,42 @@ class ApiService {
           }
           handler.next(options);
         },
-        onError: (error, handler) {
+        onError: (error, handler) async {
+          // Simple retry for transient timeout / network issues.
+          final isTimeout =
+              error.type == DioExceptionType.connectionTimeout ||
+              error.type == DioExceptionType.receiveTimeout ||
+              error.type == DioExceptionType.sendTimeout ||
+              error.type == DioExceptionType.unknown;
+
+          if (isTimeout) {
+            final retries =
+                (error.requestOptions.extra['retries'] as int?) ?? 0;
+            if (retries < 2) {
+              error.requestOptions.extra['retries'] = retries + 1;
+              final backoffMs = 500 * (1 << retries);
+              await Future.delayed(Duration(milliseconds: backoffMs));
+              final clone = await dio!.fetch(error.requestOptions);
+              handler.resolve(clone);
+              return;
+            }
+
+            final path = error.requestOptions.path;
+            final method = error.requestOptions.method;
+            final base = dio?.options.baseUrl;
+            final url = '${base ?? ''}$path';
+            handler.reject(
+              DioException(
+                requestOptions: error.requestOptions,
+                response: error.response,
+                type: error.type,
+                error:
+                    'Connection timeout after retries. url=$url method=$method',
+              ),
+            );
+            return;
+          }
+
           if (error.response?.statusCode == 401) {
             AuthService().logout();
           }
