@@ -54,7 +54,15 @@ class RoleGuard extends ConsumerWidget {
   }
 
   bool _canAccess(String userRole, String requiredRole) {
-    const roleHierarchy = {'Admin': 3, 'Sales': 2, 'User': 1};
-    return (roleHierarchy[userRole] ?? 0) >= (roleHierarchy[requiredRole] ?? 0);
+    const roleHierarchy = {'admin': 3, 'sales': 2, 'user': 1};
+
+    // Normalize both roles to lowercase for comparison
+    final userRoleLower = userRole.trim().toLowerCase();
+    final requiredRoleLower = requiredRole.trim().toLowerCase();
+
+    final userLevel = roleHierarchy[userRoleLower] ?? 0;
+    final requiredLevel = roleHierarchy[requiredRoleLower] ?? 0;
+
+    return userLevel >= requiredLevel;
   }
 }

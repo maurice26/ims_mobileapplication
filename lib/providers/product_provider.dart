@@ -5,15 +5,16 @@ import '../services/product_service.dart';
 import 'auth_provider.dart';
 
 final productsProvider = FutureProvider<List<Product>>((ref) async {
-  final authState = ref.watch(authProvider);
-  final token = authState?.token;
-  if (token == null) return [];
-  final service = ProductService();
-  final result = await service.getProducts(token);
-  if (result.hasException) {
-    throw result.exception!;
+  final authState = ref.read(authProvider);
+  if (authState == null || !authState.isAuthenticated) {
+    return [];
   }
-  // Parse products from GraphQL data
+
+  final result = await ProductService().getProducts(authState.token);
+  if (result.hasException) throw result.exception!;
+
   final data = result.data?['products'] as List<dynamic>? ?? [];
-  return data.map((json) => Product.fromJson(json)).toList();
+  return data
+      .map((json) => Product.fromJson(json as Map<String, dynamic>))
+      .toList();
 });

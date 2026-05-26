@@ -8,16 +8,18 @@ class UserService {
 
     return await client.query(
       QueryOptions(
-        document: gql('''
+        document: gql(r'''
           query {
             users {
-              id
+              userId
               name
               email
               role
             }
           }
         '''),
+        // ✅ Always fetch fresh from network, not cache
+        fetchPolicy: FetchPolicy.networkOnly,
       ),
     );
   }
@@ -30,10 +32,10 @@ class UserService {
 
     return await client.mutate(
       MutationOptions(
-        document: gql('''
-          mutation CreateUser(\$input: CreateUserInput!) {
-            createUser(input: \$input) {
-              id
+        document: gql(r'''
+          mutation CreateUser($input: CreateUserInput!) {
+            createUser(input: $input) {
+              userId
               name
               email
               role
@@ -53,10 +55,10 @@ class UserService {
 
     return await client.mutate(
       MutationOptions(
-        document: gql('''
-          mutation UpdateUser(\$input: UpdateUserInput!) {
-            updateUser(input: \$input) {
-              id
+        document: gql(r'''
+          mutation UpdateUser($input: UpdateUserInput!) {
+            updateUser(input: $input) {
+              userId
               name
               email
               role
@@ -73,9 +75,9 @@ class UserService {
 
     return await client.mutate(
       MutationOptions(
-        document: gql('''
-          mutation DeleteUser(\$userId: Int!) {
-            deleteUser(userId: \$userId)
+        document: gql(r'''
+          mutation DeleteUser($userId: Int!) {
+            deleteUser(userId: $userId)
           }
         '''),
         variables: {'userId': userId},

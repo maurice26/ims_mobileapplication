@@ -5,7 +5,7 @@ import '../services/report_service.dart';
 import 'auth_provider.dart';
 
 final reportProvider = FutureProvider.family<Report, String>((ref, type) async {
-  final authState = ref.watch(authProvider);
+  final authState = ref.read(authProvider); // ✅ fixed: watch → read
   final token = authState?.token;
   if (token == null) throw UnimplementedError('Report requires authentication');
   final service = ReportService();

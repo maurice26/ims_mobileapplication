@@ -1,11 +1,12 @@
 import 'user.dart';
 
 class AuthState {
-  final String? token;
-  final User? user;
+  final String token;
+  final User user;
 
-  const AuthState({this.token, this.user});
+  AuthState({required this.token, required this.user});
 
-  bool get isAuthenticated => token != null && user != null;
-  String get role => user?.role ?? 'user';
+  bool get isAuthenticated => token.isNotEmpty;
+
+  String get role => user.role;
 }

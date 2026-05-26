@@ -106,13 +106,13 @@ class _RegisterScreenState extends State<RegisterScreen>
                   Container(
                     padding: const EdgeInsets.all(32),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Color(0xFF8B5CF6), Color(0xFFA78BFA)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(24),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color(0x408B5CF6),
                           blurRadius: 30,
@@ -123,7 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                     ),
                     child: Column(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.person_add_outlined,
                           size: 80,
                           color: Colors.white,
@@ -135,7 +135,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                               ?.copyWith(
                                 color: Colors.white,
                                 shadows: [
-                                  Shadow(
+                                  const Shadow(
                                     color: Color(0xFF8B5CF6),
                                     blurRadius: 20,
                                     offset: Offset(0, 4),
@@ -154,7 +154,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 20,
                           spreadRadius: 0,
                         ),
@@ -175,7 +175,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                         const SizedBox(height: 32),
                         TextFormField(
                           controller: nameController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'Full Name',
                             prefixIcon: Icon(
                               Icons.person_outlined,
@@ -187,7 +187,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                         TextFormField(
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'Email',
                             prefixIcon: Icon(
                               Icons.email_outlined,
@@ -201,7 +201,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                           obscureText: obscurePassword,
                           decoration: InputDecoration(
                             labelText: 'Password',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.lock_outlined,
                               color: Color(0xFF8B5CF6),
                             ),
@@ -223,7 +223,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                           child: ElevatedButton(
                             onPressed: isLoading ? null : _register,
                             child: isLoading
-                                ? SizedBox(
+                                ? const SizedBox(
                                     height: 20,
                                     width: 20,
                                     child: CircularProgressIndicator(
@@ -243,7 +243,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                             const Text('Already have an account? '),
                             GestureDetector(
                               onTap: () => Navigator.pop(context),
-                              child: Text(
+                              child: const Text(
                                 'Sign In',
                                 style: TextStyle(
                                   color: Color(0xFF8B5CF6),

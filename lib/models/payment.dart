@@ -18,11 +18,11 @@ class Payment {
   factory Payment.fromJson(Map<String, dynamic> json) {
     return Payment(
       id: json['paymentId'].toString(),
-      saleId: json['saleId'] ?? '',
+      saleId: json['saleId']?.toString() ?? '',
       amount: double.parse(json['amount'].toString()),
-      method: json['method'] ?? '',
-      status: json['status'] ?? '',
-      date: json['date'] ?? '',
+      method: (json['paymentMethod'] ?? json['method'] ?? '').toString(),
+      status: (json['paymentStatus'] ?? json['status'] ?? '').toString(),
+      date: (json['paymentDate'] ?? json['date'] ?? '').toString(),
     );
   }
 

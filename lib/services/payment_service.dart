@@ -14,9 +14,9 @@ class PaymentService {
               paymentId
               saleId
               amount
-              method
-              status
-              date
+              paymentMethod
+              paymentStatus
+              paymentDate
             }
           }
         '''),
@@ -33,20 +33,22 @@ class PaymentService {
     return await client.mutate(
       MutationOptions(
         document: gql('''
-          mutation MakePayment(\$saleId: String!, \$amount: Float!, \$method: String!) {
-            makePayment(saleId: \$saleId, amount: \$amount, method: \$method) {
+          mutation AddPayment(\$saleId: Int!, \$amount: Decimal!, \$method: String!) {
+            addPayment(saleId: \$saleId, amount: \$amount, method: \$method) {
               paymentId
               saleId
               amount
-              method
-              status
-              date
+              paymentMethod
+              paymentStatus
+              paymentDate
             }
           }
         '''),
         variables: {
-          'saleId': paymentData['saleId'],
-          'amount': paymentData['amount'],
+          'saleId':
+              int.tryParse(paymentData['saleId'].toString()) ??
+              paymentData['saleId'],
+          'amount': (paymentData['amount'] as num).toDouble(),
           'method': paymentData['method'],
         },
       ),

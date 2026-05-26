@@ -18,11 +18,11 @@ class Sale {
   factory Sale.fromJson(Map<String, dynamic> json) {
     return Sale(
       id: json['saleId'].toString(),
-      productId: json['productId'] ?? '',
+      productId: json['productId']?.toString() ?? '',
       quantity: int.parse(json['quantity'].toString()),
-      total: double.parse(json['total'].toString()),
-      date: json['date'] ?? '',
-      userId: json['userId'] ?? '',
+      total: double.parse((json['totalPrice'] ?? json['total']).toString()),
+      date: (json['saleDate'] ?? json['date'] ?? '').toString(),
+      userId: json['userId']?.toString() ?? '',
     );
   }
 

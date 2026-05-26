@@ -15,7 +15,9 @@ class Supplier {
     return Supplier(
       id: json['supplierId'].toString(),
       name: json['name'] ?? '',
-      contact: json['contact'] ?? '',
+      // Backend currently returns `contactInfo` (your supplier_service.dart queries it).
+      // Keep backward compatibility with `contact`.
+      contact: (json['contactInfo'] ?? json['contact'] ?? '').toString(),
       products: List<String>.from(json['products'] ?? []),
     );
   }

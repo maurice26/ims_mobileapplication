@@ -49,6 +49,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
 
   Future<void> _login() async {
     if (isLoading) return;
+    if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please enter email and password'),
+          backgroundColor: Colors.orange,
+        ),
+      );
+      return;
+    }
     setState(() => isLoading = true);
     try {
       final result = await ApiService.login(
@@ -58,26 +67,31 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
       final token = result['token'] as String;
       final userData = result['user'] as Map<String, dynamic>;
       final user = User.fromJson(userData);
+
+      // Login and save to auth provider
       await ref.read(authProvider.notifier).login(token, user);
-      // Get updated state
-      final authState = ref.read(authProvider);
-      final role = authState!.role;
-      Widget homeWidget;
-      switch (role) {
-        case 'Admin':
-          homeWidget = const AdminDashboard();
-          break;
-        case 'Sales':
-          homeWidget = const SalesDashboard();
-          break;
-        default:
-          homeWidget = const UserDashboard();
-      }
+
+      // Use lowercase role for comparison
+      final role = user.role.toLowerCase();
+
       if (mounted) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (_) => homeWidget),
-        );
+        // Navigate to appropriate dashboard based on role
+        if (role == 'admin') {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const AdminDashboard()),
+          );
+        } else if (role == 'sales') {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const SalesDashboard()),
+          );
+        } else {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const UserDashboard()),
+          );
+        }
       }
     } catch (e) {
       if (mounted) {
@@ -85,6 +99,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
           SnackBar(
             content: Text('Login failed: ${e.toString()}'),
             backgroundColor: Colors.red,
+            duration: const Duration(seconds: 3),
           ),
         );
       }
@@ -115,13 +130,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                   Container(
                     padding: const EdgeInsets.all(32),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Color(0xFF8B5CF6), Color(0xFFA78BFA)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(24),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color(0x408B5CF6),
                           blurRadius: 30,
@@ -132,7 +147,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                     ),
                     child: Column(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.inventory_2_outlined,
                           size: 80,
                           color: Colors.white,
@@ -144,7 +159,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                               ?.copyWith(
                                 color: Colors.white,
                                 shadows: [
-                                  Shadow(
+                                  const Shadow(
                                     color: Color(0xFF8B5CF6),
                                     blurRadius: 20,
                                     offset: Offset(0, 4),
@@ -155,7 +170,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                         Text(
                           'Making your work easier',
                           style: Theme.of(context).textTheme.titleLarge
-                              ?.copyWith(color: Colors.white.withOpacity(0.9)),
+                              ?.copyWith(
+                                color: Colors.white.withValues(alpha: 0.9),
+                              ),
                         ),
                       ],
                     ),
@@ -170,7 +187,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 20,
                           spreadRadius: 0,
                         ),
@@ -195,13 +212,16 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             labelText: 'Email',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.email_outlined,
                               color: Color(0xFF8B5CF6),
                             ),
                             suffixIcon: emailController.text.isNotEmpty
                                 ? IconButton(
-                                    icon: Icon(Icons.clear, color: Colors.grey),
+                                    icon: const Icon(
+                                      Icons.clear,
+                                      color: Colors.grey,
+                                    ),
                                     onPressed: () => emailController.clear(),
                                   )
                                 : null,
@@ -214,7 +234,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                           obscureText: obscurePassword,
                           decoration: InputDecoration(
                             labelText: 'Password',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.lock_outlined,
                               color: Color(0xFF8B5CF6),
                             ),
@@ -237,7 +257,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                           child: ElevatedButton(
                             onPressed: isLoading ? null : _login,
                             child: isLoading
-                                ? SizedBox(
+                                ? const SizedBox(
                                     height: 20,
                                     width: 20,
                                     child: CircularProgressIndicator(
@@ -256,7 +276,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Don\'t have an account? '),
+                            const Text('Don\'t have an account? '),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -266,7 +286,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                                   ),
                                 );
                               },
-                              child: Text(
+                              child: const Text(
                                 'Register',
                                 style: TextStyle(
                                   color: Color(0xFF8B5CF6),

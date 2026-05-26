@@ -1,33 +1,44 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 import '../config.dart';
 import 'auth_service.dart';
 
 class ApiService {
-  static Dio? dio;
+  static Dio? _dio; // rename to private
 
   static Dio get instance {
-    dio ??= Dio(
+    if (_dio != null) return _dio!; // ← return early, don't re-add interceptors
+
+    final baseUrl = Config.getApiUrl();
+
+    _dio = Dio(
       BaseOptions(
-        baseUrl: Config.getApiUrl(), // ✅ FIXED: Use dynamic URL
+        baseUrl: baseUrl,
         connectTimeout: const Duration(seconds: 5),
         receiveTimeout: const Duration(seconds: 5),
         sendTimeout: const Duration(seconds: 5),
       ),
     );
 
-    // Interceptor for token
-    dio!.interceptors.add(
+    if (kDebugMode) {
+      print('[ApiService] baseUrl=$baseUrl');
+    }
+
+    _dio!.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
-          final token = await AuthService().getToken();
-          if (token != null) {
-            options.headers['Authorization'] = 'Bearer $token';
+          // Skip token injection for auth endpoints
+          final isAuthEndpoint = options.path.contains('/auth/');
+          if (!isAuthEndpoint) {
+            final token = await AuthService().getToken();
+            if (token != null) {
+              options.headers['Authorization'] = 'Bearer $token';
+            }
           }
           handler.next(options);
         },
         onError: (error, handler) async {
-          // Simple retry for transient timeout / network issues.
           final isTimeout =
               error.type == DioExceptionType.connectionTimeout ||
               error.type == DioExceptionType.receiveTimeout ||
@@ -41,14 +52,18 @@ class ApiService {
               error.requestOptions.extra['retries'] = retries + 1;
               final backoffMs = 500 * (1 << retries);
               await Future.delayed(Duration(milliseconds: backoffMs));
-              final clone = await dio!.fetch(error.requestOptions);
-              handler.resolve(clone);
+              try {
+                final clone = await _dio!.fetch(error.requestOptions);
+                handler.resolve(clone);
+              } catch (e) {
+                handler.next(error);
+              }
               return;
             }
 
             final path = error.requestOptions.path;
             final method = error.requestOptions.method;
-            final base = dio?.options.baseUrl;
+            final base = _dio?.options.baseUrl;
             final url = '${base ?? ''}$path';
             handler.reject(
               DioException(
@@ -63,14 +78,19 @@ class ApiService {
           }
 
           if (error.response?.statusCode == 401) {
-            AuthService().logout();
+            await AuthService().logout();
           }
           handler.next(error);
         },
       ),
     );
 
-    return dio!;
+    return _dio!;
+  }
+
+  // Add a reset method for logout
+  static void reset() {
+    _dio = null;
   }
 
   static Future<Map<String, dynamic>> login(
@@ -86,7 +106,9 @@ class ApiService {
       final token = data['token'] as String;
       return {'token': token, 'user': data['user']};
     } catch (e) {
-      throw Exception('Login failed: $e');
+      throw Exception(
+        'Login failed (check API_BASE_URL / backend on port 7188). Error: $e',
+      );
     }
   }
 
@@ -102,7 +124,9 @@ class ApiService {
       );
       return response.data as Map<String, dynamic>;
     } catch (e) {
-      throw Exception('Register failed: $e');
+      throw Exception(
+        'Register failed (check API_BASE_URL / backend on port 7188). Error: $e',
+      );
     }
   }
 }

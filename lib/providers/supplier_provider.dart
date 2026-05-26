@@ -5,14 +5,14 @@ import '../services/supplier_service.dart';
 import 'auth_provider.dart';
 
 final suppliersProvider = FutureProvider<List<Supplier>>((ref) async {
-  final authState = ref.watch(authProvider);
-  final token = authState?.token;
-  if (token == null) return [];
-  final service = SupplierService();
-  final result = await service.getSuppliers(token);
-  if (result.hasException) {
-    throw result.exception!;
+  final authState = ref.read(authProvider);
+  if (authState == null || !authState.isAuthenticated) {
+    return [];
   }
-  final List<dynamic> suppliersJson = result.data?['suppliers'] ?? [];
-  return suppliersJson.map((json) => Supplier.fromJson(json)).toList();
+  final result = await SupplierService().getSuppliers(authState.token);
+  if (result.hasException) throw result.exception!;
+  final data = result.data?['suppliers'] as List<dynamic>? ?? [];
+  return data
+      .map((json) => Supplier.fromJson(json as Map<String, dynamic>))
+      .toList();
 });

@@ -9,14 +9,14 @@ class SalesService {
 
     return await client.query(
       QueryOptions(
-        document: gql('''
+        document: gql(r'''
           query {
             sales {
               saleId
               productId
               quantity
-              total
-              date
+              totalPrice
+              saleDate
               userId
             }
           }
@@ -30,22 +30,24 @@ class SalesService {
 
     return await client.mutate(
       MutationOptions(
-        document: gql('''
-          mutation CreateSale(\$productId: String!, \$quantity: Int!, \$total: Float!) {
-            createSale(productId: \$productId, quantity: \$quantity, total: \$total) {
+        document: gql(r'''
+          mutation CreateSale($input: SaleInput!) {
+            createSale(input: $input) {
               saleId
               productId
               quantity
-              total
-              date
+              totalPrice
+              saleDate
               userId
             }
           }
         '''),
         variables: {
-          'productId': sale.productId,
-          'quantity': sale.quantity,
-          'total': sale.total,
+          'input': {
+            'productId': int.parse(sale.productId),
+            'userId': int.parse(sale.userId),
+            'quantity': sale.quantity,
+          },
         },
       ),
     );
